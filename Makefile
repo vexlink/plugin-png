@@ -1,12 +1,16 @@
-VERSION:=$(git describe --tags)
+VERSION:=$(shell git describe --tags)
 LDFLAGS=-ldflags "-X main.Version=$(VERSION)"
 
 ifeq ($(PREFIX),)
 	PREFIX := /usr/local
 endif
 
-plugin-png.so:
+plugin-png.so: deps
 	go build -buildmode=plugin $(LDFLAGS) -o plugin-png.so
+
+.PHONY: deps
+deps:
+	go get -buildmode=plugin ./...
 
 install: plugin-png.so
 	install -d $(DESTDIR)$(PREFIX)/lib/vexlink/plugins/
