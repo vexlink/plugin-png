@@ -7,8 +7,8 @@ var Version string
 var Plugin = vexlink.Plugin{
 	Name:    "png",
 	Version: Version,
-	Nodes: []vexlink.Node{
-		&PNGWriter{},
-		&PNGReader{},
+	Nodes: map[string]vexlink.Node{
+		"pngwriter": &PNGWriter{},
+		"pngreader": &PNGReader{},
 	},
 }
