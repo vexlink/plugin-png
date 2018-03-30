@@ -37,7 +37,7 @@ func (this *PNGReader) Run(options map[string]interface{}, input chan map[string
 				img, _ := png.Decode(f)
 				output <- map[string]interface{}{"image": img}
 			} else {
-				// TODO: Error handling
+				panic(err)
 			}
 		}
 
