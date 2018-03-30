@@ -12,7 +12,7 @@ plugin-png.so: deps
 deps:
 	go get -buildmode=plugin ./...
 
-install: plugin-png.so
+install:
 	install -d $(DESTDIR)$(PREFIX)/lib/vexlink/plugins/
 	install -m 644 plugin-png.so $(DESTDIR)$(PREFIX)/lib/vexlink/plugins/
 
