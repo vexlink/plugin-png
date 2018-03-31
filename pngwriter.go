@@ -22,7 +22,7 @@ func (this *PNGWriter) GetInformation() vexlink.NodeInformation {
 }
 
 func (this *PNGWriter) Run(options map[string]interface{}, input chan map[string]interface{}, output chan map[string]interface{}, stop chan struct{}) {
-	path, _ := options["path"].(string)
+	path := options["path"].(string)
 
 	for {
 		// Process channels
@@ -31,13 +31,14 @@ func (this *PNGWriter) Run(options map[string]interface{}, input chan map[string
 			return
 
 		case in := <-input: // Handle input
-			if img, ok := in["image"].(image.Image); ok {
+			if in["image"] != nil {
+				img := in["image"].(*image.Image)
 				f, _ := os.Create(path)
-				defer f.Close()
-				png.Encode(f, img)
-			} else {
-				// TODO: Error handling
+				png.Encode(f, *img)
+				f.Close()
 			}
+
+			output <- nil
 		}
 
 	}
