@@ -5,7 +5,7 @@ ifeq ($(PREFIX),)
 	PREFIX := /usr/local
 endif
 
-plugin-png.so: deps
+plugin-png.so: *.go
 	go build -buildmode=plugin $(LDFLAGS) -o plugin-png.so
 
 .PHONY: deps
