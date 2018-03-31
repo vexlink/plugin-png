@@ -2,14 +2,14 @@
 
 
 [[projects]]
-  branch = "master"
-  name = "github.com/vexlink/vexlink"
+  name = "gopkg.in/vexlink/vexlink.v0"
   packages = ["."]
   revision = "c2878548ab4639c3bca2621ac4e8d7a093537586"
+  version = "v0.0.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5817c5bed02f2b83978e1c87eda370a9a212978d1841a49aacc3cdc3402d4dde"
+  inputs-digest = "8d36bbad8e678207caf3744d1b5f900d5e8809647a9f13b9d224a8bf00662845"
   solver-name = "gps-cdcl"
   solver-version = 1

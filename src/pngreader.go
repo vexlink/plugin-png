@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/vexlink/vexlink"
+	"gopkg.in/vexlink/vexlink.v0"
 	"image/png"
 	"os"
 )

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/vexlink/vexlink"
+import "gopkg.in/vexlink/vexlink.v0"
 
 var Version string
 
