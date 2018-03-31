@@ -10,7 +10,7 @@ plugin-png.so: deps
 
 .PHONY: deps
 deps:
-	go get -buildmode=plugin ./...
+	dep ensure
 
 install:
 	install -d $(DESTDIR)$(PREFIX)/lib/vexlink/plugins/
